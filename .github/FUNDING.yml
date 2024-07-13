@@ -3,4 +3,6 @@
 github: [piyush20B]
 patreon: pixelThreader
 paypal: platformWorks
-custom: ["https://paypal.me/platformWorks?country.x=IN&locale.x=en_GB", paypal.com]
+custom:
+  - url: https://paypal.me/platformWorks?country.x=IN&locale.x=en_GB
+    name: Support via PayPal
