@@ -1,0 +1,32 @@
+{
+    "name": "User",
+    "theme": ["light", "dark", "auto", "ambient", "cornsilk", "cape-yellow", "deep-slate", "obsedian"],
+    "appearance": ["auto", "light", "dark", "sepia", "dark sepia", "light sepia", "rainbow", "custom"],
+    "locale": ["en", "hi", "bn", "zh-cn", "es", "fr", "de", "it", "ja", "ko", "uk", "pt", "ru"],
+    "font": "ubuntu",
+    "font-code": "ubuntu",
+    "font-size": 15,
+    "smooth-transitions": true,
+    "show-read-time": true,
+    "wishing": true, 
+    "date": true,
+    "clock": true,
+    "format": ["12", "24", "analog"],
+    "clock-theme": {
+        "bg": "#b6ecec",
+        "fg": "#3f3f3f",
+        "hourHand": "#3f3f3f",
+        "minHand": "#3f3f3f",
+        "secHand": "#3f3f3f"
+    },
+    "codeFormatting": true,
+    "codeFormattingEngine": ["UtilitJs", "PrismJS", "HilightJs", "rainbowJs", "microHighlightJs"],
+    "terms-and-conditions": {
+        "version": "v1.0.0",
+        "package": "UtilityJS",
+        "creator": "PixelThreader",
+        "url": "https://utilityjs.com",
+        "github": "https://github.com/pixelThreader/UtilityJS",
+        "desc": "All user data is securely stored locally on your device, ensuring complete privacy and data confidentiality."
+    }
+}

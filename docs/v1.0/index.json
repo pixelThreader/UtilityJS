@@ -1,0 +1,11 @@
+{
+    "info": {
+        "version": "1.0.0",
+        "title": "UtilityJS",
+        "description": "UtilityJS is a modular JavaScript library featuring a collection of essential utility functions. Designed for flexibility, it allows developers to pick and choose modules based on project needs, enhancing code efficiency and simplifying development tasks.",
+        "license": {
+            "name": "MIT",
+            "url": "https://raw.githubusercontent.com/piyush20B/UtilityJS/main/LICENSE"
+        }
+    }
+}

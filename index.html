@@ -3,33 +3,223 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>UtilityJS - Coming Soon</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #8f8f8f;
-        }
-
-        .coming-soon {
-            text-align: center;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="notranslate">UtilityJS | Save your Time</title>
+    <link rel="shortcut icon" href="/assets/brand/premium-logo-png.png" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/icons/bs-icons.css">
 </head>
 
-<body>
-    <div class="coming-soon">
-        <h1>UtilityJS</h1>
-        <p class="lead">Coming Soon</p>
-    </div>
+<body class="scroll-beautiful blue-grey darken-4" data-font="ubuntu">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <header style="z-index: 100000;">
+        <div class="wrapper">
+            <a href="/">
+                <div class="logo">
+                    <div class="brand-name notranslate">
+                        UtilityJS
+                    </div>
+                </div>
+            </a>
+            <div class="searchBarWrapper">
+                <form id="search-form" action="{% url 'search' %}" method="get"
+                    style="width: 100%; height: 100%; display: flex;">
+                    <div class="searchBar-input">
+                        <input id="search-content" name="search-content" type="text" placeholder="Search Your Files!!"
+                            autocomplete="off">
+                    </div>
+                    <span class="shortcut notranslate">
+                        <div class="key ls">ctrl</div>
+                        <span>+</span>
+                        <div class="key">/</div>
+                    </span>
+                    <div class="search-btn">
+                        <button type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="right-header-panel">
+                <div class="right-cont">
+                    <div class="toggle-theme">
+                        <div class="outer-shell">
+                            <div class="inner-toggler" id="switch-btn-dl">
+                                <div class="icon-theme">
+                                    <div class="icon-t">
+                                        <svg class="light" fill="#0aa5a5" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 512 512">
+                                            <path
+                                                d="M256 118a22 22 0 01-22-22V48a22 22 0 0144 0v48a22 22 0 01-22 22zM256 486a22 22 0 01-22-22v-48a22 22 0 0144 0v48a22 22 0 01-22 22zM369.14 164.86a22 22 0 01-15.56-37.55l33.94-33.94a22 22 0 0131.11 31.11l-33.94 33.94a21.93 21.93 0 01-15.55 6.44zM108.92 425.08a22 22 0 01-15.55-37.56l33.94-33.94a22 22 0 1131.11 31.11l-33.94 33.94a21.94 21.94 0 01-15.56 6.45zM464 278h-48a22 22 0 010-44h48a22 22 0 010 44zM96 278H48a22 22 0 010-44h48a22 22 0 010 44zM403.08 425.08a21.94 21.94 0 01-15.56-6.45l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.55 37.56zM142.86 164.86a21.89 21.89 0 01-15.55-6.44l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.56 37.55zM256 358a102 102 0 11102-102 102.12 102.12 0 01-102 102z" />
+                                        </svg>
+                                    </div>
+                                    <div class="icon-t">
+                                        <svg fill="#8eaeb0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M264 480A232 232 0 0132 248c0-94 54-178.28 137.61-214.67a16 16 0 0121.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0121.06 21.06C442.28 426 358 480 264 480z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-menu menu" id="main-menu-toggler">
+                        <div class="open-menu" isOpen="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="menu" viewBox="0 0 512 512">
+                                <path fill="none" stroke="#006c66" stroke-linecap="round" stroke-miterlimit="10"
+                                    stroke-width="48" d="M88 152h336M88 256h336M88 360h336" />
+                            </svg>
+                        </div>
+                        <div class="open-menu" isOpen="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="menu" viewBox="0 0 512 512">
+                                <path fill="none" stroke="#006c66" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="48" d="M368 368L144 144M368 144L144 368" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="your-profile" id="profile-dropdown-toggle">
+                        <div class="profile-img-box">
+                            <img src="/static/assets/prf-sm.jpeg" alt="user">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown" id="profile-dropdown" isOpen="closed">
+            <ul>
+                <li>
+                    <a href="/usage" class="use link-profile-nav">
+                        <div class="icon-action use">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <span class="action-name use">Usage</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/profile/piyush20" class="prfle link-profile-nav">
+                        <div class="icon-action prfle">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <span class="action-name prfle">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/settings" class="sett link-profile-nav">
+                        <div class="icon-action sett">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <span class="action-name sett">Settings</span>
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="{% url 'logout' %}" class="lout link-profile-nav">
+                        <div class="icon-action lout">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </div>
+                        <span class="action-name lout">Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-wrapper oo" id="main-navigation-body">
+            <div class="nav-main-container">
+                <nav>
+                    <ul>
+                        <li class="nav-item">
+                            <a href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/favourites">Favourites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/upload">Your Uploads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/upload/file">Upload File</a>
+                        </li>
+                        <li class="nav-item mobile-nav-item">
+                            <a href="/search?query=file">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/chat">Chat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'blogs' %}">Blogs and Communities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about">About Project</a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <pre style="font-size: 1.3rem;">
+            <code>
+                def init(): \n return "this is function."
+            </code>
+        </pre>
+
+    </main>
+
+    <footer class="footer_uppy">
+        <section class="lowerFooter">
+            Copyright &copy; 2024-2026 <span><a href="/">Uppy Cloud</a></span>
+        </section>
+    </footer>
+
+    <!-- Scripts and libraries -->
+    <script src="/assets/libs/js/jQuery.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+    <!-- tooltips -->
+    <script src="/assets/libs/js/popper.js"></script>
+    <!-- <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script> -->
+
+    <script>
+        // Utilities for the Frontend-Backend Processing...
+
+        $(document).ready(function () {
+            // Initialize theme based on localStorage
+            var theme = localStorage.getItem('theme') || 'light'; // Default to 'light' if not set
+            $('body').attr('data-uppy-theme', theme);
+            if (theme === 'dark') {
+                $('.outer-shell').addClass('dark');
+                $('#switch-btn-dl').addClass('dark');
+                $('.icon-theme').addClass('dark');
+            }
+        });
+
+        // Toggle theme on click
+        $('.outer-shell').click(function () {
+            var currentTheme = $('body').attr('data-uppy-theme');
+            var newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+
+            // Update the theme attributes and classes
+            $('body').attr('data-uppy-theme', newTheme);
+            $('.outer-shell').toggleClass('dark', newTheme === 'dark');
+            $('.icon-theme').toggleClass('dark', newTheme === 'dark');
+            $('#switch-btn-dl').toggleClass('dark', newTheme === 'dark');
+
+            // Save the new theme in localStorage
+            localStorage.setItem('theme', newTheme);
+        });
+
+    </script>
+
+    <script src="/assets/js/script-index.js"></script>
+
 </body>
 
 </html>

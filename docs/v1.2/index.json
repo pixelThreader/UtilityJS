@@ -1,0 +1,11 @@
+{
+    "info": {
+        "version": "1.0.1",
+        "title": "UtilityJS",
+        "description": "Comming Soon...",
+        "license": {
+            "name": "MIT",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    }
+}
