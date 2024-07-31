@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="notranslate">UtilityJS | Save your Time</title>
+    <link rel="shortcut icon" href="/assets/brand/premium-logo-png.png" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/icons/bs-icons.css">
+</head>
+
+<body data-utjs-theme="light" class="scroll-beautiful blue-grey darken-4" data-font="ubuntu">
+
+    <section id="mainContianer">
+    <header style="z-index: 100000;">
+        <div class="wrapper">
+            <a href="/">
+                <div class="logo">
+                    <div class="brand-name notranslate">
+                        UtilityJS
+                    </div>
+                </div>
+            </a>
+            <div class="searchBarWrapper utjs-rip">
+                <form id="search-form" action="{% url 'search' %}" method="get"
+                    style="width: 100%; height: 100%; display: flex;">
+                    <div class="searchBar-input">
+                        <input id="search-content" name="search-content" type="text" placeholder="Search Your Files!!"
+                            autocomplete="off">
+                    </div>
+                    <span class="shortcut notranslate">
+                        <div class="key ls">ctrl</div>
+                        <span>+</span>
+                        <div class="key">/</div>
+                    </span>
+                    <div class="search-btn">
+                        <button type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="right-header-panel">
+                <div class="right-cont">
+                    <div class="toggle-theme">
+                        <div class="outer-shell">
+                            <div class="inner-toggler" id="switch-btn-dl">
+                                <div class="icon-theme">
+                                    <div class="icon-t">
+                                        <svg class="light" fill="#0aa5a5" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 512 512">
+                                            <path
+                                                d="M256 118a22 22 0 01-22-22V48a22 22 0 0144 0v48a22 22 0 01-22 22zM256 486a22 22 0 01-22-22v-48a22 22 0 0144 0v48a22 22 0 01-22 22zM369.14 164.86a22 22 0 01-15.56-37.55l33.94-33.94a22 22 0 0131.11 31.11l-33.94 33.94a21.93 21.93 0 01-15.55 6.44zM108.92 425.08a22 22 0 01-15.55-37.56l33.94-33.94a22 22 0 1131.11 31.11l-33.94 33.94a21.94 21.94 0 01-15.56 6.45zM464 278h-48a22 22 0 010-44h48a22 22 0 010 44zM96 278H48a22 22 0 010-44h48a22 22 0 010 44zM403.08 425.08a21.94 21.94 0 01-15.56-6.45l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.55 37.56zM142.86 164.86a21.89 21.89 0 01-15.55-6.44l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.56 37.55zM256 358a102 102 0 11102-102 102.12 102.12 0 01-102 102z" />
+                                        </svg>
+                                    </div>
+                                    <div class="icon-t">
+                                        <svg fill="#8eaeb0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M264 480A232 232 0 0132 248c0-94 54-178.28 137.61-214.67a16 16 0 0121.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0121.06 21.06C442.28 426 358 480 264 480z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-menu menu utjs-rip" id="main-menu-toggler">
+                        <div class="open-menu" isOpen="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="menu" viewBox="0 0 512 512">
+                                <path fill="none" stroke="#006c66" stroke-linecap="round" stroke-miterlimit="10"
+                                    stroke-width="48" d="M88 152h336M88 256h336M88 360h336" />
+                            </svg>
+                        </div>
+                        <div class="open-menu" isOpen="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="menu" viewBox="0 0 512 512">
+                                <path fill="none" stroke="#006c66" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="48" d="M368 368L144 144M368 144L144 368" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="your-profile utjs-rip" id="profile-dropdown-toggle">
+                        <div class="profile-img-box">
+                            <img src="/static/assets/prf-sm.jpeg" alt="user">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown" id="profile-dropdown" isOpen="closed">
+            <ul>
+                <li>
+                    <a href="#" class="link-profile-nav utjs-rip">
+                        <div class="icon-action ">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <span class="action-name ">Settings</span>
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#" class="link-profile-nav utjs-rip">
+                        <div class="icon-action">
+                            <i class="bi bi-menu-button-wide"></i>
+                        </div>
+                        <span class="action-name">Versions</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-wrapper oo" id="main-navigation-body">
+            <div class="nav-main-container">
+                <nav>
+                    <ul>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">About Us</a>
+                        </li>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">Favourites</a>
+                        </li>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">Your Uploads</a>
+                        </li>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">Upload File</a>
+                        </li>
+                        <li class="nav-item utjs-rip mobile-nav-item">
+                            <a href="#">Search</a>
+                        </li>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">Chat</a>
+                        </li>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">Blogs and Communities</a>
+                        </li>
+                        <li class="nav-item utjs-rip">
+                            <a href="#">About Project</a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <aside></aside>
+
+    <main>
+
+        <div class="content-wrapper"></div>
+
+    </main>
+    </section>
+    
+
+    <footer class="footer_utjs">
+        <section class="lowerFooter">
+            Copyright &copy; 2024-2026 <span><a href="#">UtilityJS</a></span>
+        </section>
+    </footer>
+
+    <!-- Scripts and libraries -->
+    <script src="/assets/libs/js/jQuery.js"></script>
+    <script src="/src/compressed/utility.main.min.js"></script>
+    <!-- tooltips -->
+    <script src="/assets/libs/js/popper.js"></script>
+    <!-- <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script> -->
+
+    <script>
+        // Ensure the document is ready before running the script
+        utsReady(function () {
+            // Initialize theme based on localStorage
+            var theme = localStorage.getItem('theme') || 'light'; // Default to 'light' if not set
+            uts('body').attr('data-utjs-theme', theme);
+            if (theme === 'dark') {
+                uts('.outer-shell').classAdd('dark');
+                uts('#switch-btn-dl').classAdd('dark');
+                uts('.icon-theme').classAdd('dark');
+            }
+
+            // Toggle theme on click
+            uts('.outer-shell').addEventListener('click', function () {
+                var currentTheme = uts('body').attr('data-utjs-theme');
+                var newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+
+                // Update the theme attributes and classes
+                uts('body').attr('data-utjs-theme', newTheme);
+                uts('.outer-shell').classToggle('dark');
+                uts('#switch-btn-dl').classToggle('dark');
+                uts('.icon-theme').classToggle('dark');
+
+                // Save the new theme in localStorage
+                localStorage.setItem('theme', newTheme);
+            });
+        });
+
+
+
+
+
+
+    </script>
+
+    <script src="/assets/js/script-index.js"></script>
+
+</body>
+
+</html>

@@ -1,9 +1,34 @@
 /* 
-* JavaScript code for the Uppy project - a cloud storage platform
+* JavaScript code for the UtilityJS project - a cloud storage platform
 * This code is part of a portfolio project
 * Version: 1.0.0
 * Creator: Piyush Rana
 */
+
+utsReady(function() {
+
+    let htmlConstrudtor = new HtmlUtility();
+    uts('.utjs-rip').eachone('click', function(e) {
+        
+        // Get the bounding rect of the element
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        
+        // Set the size and position of the ripple
+        const $ripple = htmlConstrudtor.createSpan('',{
+            'style': `width: ${size}px'; height: ${size}px; left: ${e.clientX - rect.left - size / 2}px; top: ${e.clientY - rect.top - size / 2}px;`
+        });
+
+        uts(this).appendTo($ripple);
+
+        // Remove the ripple element after animation
+        $ripple.eachone('animationend', function() {
+            $(this).remove();
+        });
+    });
+});
+
+
 
 $(document).ready(function () {
     // initially check the user theme and update it...
@@ -17,7 +42,7 @@ $(document).ready(function () {
             {
                 name: 'offset',
                 options: {
-                    offset: [0, 10],
+                    offset: [10, 20],
                 },
             }
         ],
@@ -34,7 +59,7 @@ $(document).ready(function () {
     });
 
     // Click event to toggle profile dropdown...
-    $('#profile-dropdown-toggle').click(function () { 
+    $('#profile-dropdown-toggle').click(function () {
         popperInstance.update(); // Update Popper position...
         const isOpen = $('#profile-dropdown').attr('isOpen');
         if (isOpen === "closed") {
@@ -62,13 +87,7 @@ $(document).ready(function () {
             $('#main-navigation-body').fadeIn(300).css('display', 'flex'); // Fade in navigation wrapper and display it as flex...
             $('header').addClass('active'); // Add class to header for styling purposes...
             $('#main-navigation-body .nav-main-container').animate({ opacity: 1, transform: 'scale(1)' }, 500); // Animate scaling and opacity...
-            // Animate to open li items using GSAP...
-            gsap.to('.nav-item', {
-                duration: 0.5,
-                opacity: 1,
-                y: 0,
-                stagger: 0.1
-            });
+
         } else if (openMenu.attr('isOpen') === "opened") {
             // Close menu animations...
             openMenu.removeClass('active').attr('isOpen', "closed");
@@ -76,21 +95,19 @@ $(document).ready(function () {
             $('#main-navigation-body').fadeOut(300); // Fade out navigation wrapper...
             $('header').removeClass('active'); // Remove class from header...
             $('#main-navigation-body .nav-main-container').animate({ opacity: 0, transform: 'scale(0.7)' }, 500); // Animate scaling and opacity...
-            // Animate to close li items using GSAP...
-            gsap.to('.nav-item', {
-                duration: 0.5,
-                opacity: 0,
-                y: -10,
-                stagger: 0.1
-            });
+
         }
     });
 
     // Menu items hover effects...
     $(".nav-item").on('mousemove', function (e) {
-        $(this).css({
-            '--x': e.pageX - $(this).offset().left + 'px',
-            '--y': e.pageY - $(this).offset().top + 'px'
+        var element = $(this);
+        var offset = element.offset();
+        var left = e.pageX - offset.left;
+        var top = e.pageY - offset.top;
+        element.css({
+            '--x': left + 'px',
+            '--y': top + 'px'
         });
     });
 

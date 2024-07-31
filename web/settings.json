@@ -3,6 +3,7 @@
     "theme": ["light", "dark", "auto", "ambient", "cornsilk", "cape-yellow", "deep-slate", "obsedian"],
     "appearance": ["auto", "light", "dark", "sepia", "dark sepia", "light sepia", "rainbow", "custom"],
     "locale": ["en", "hi", "bn", "zh-cn", "es", "fr", "de", "it", "ja", "ko", "uk", "pt", "ru"],
+    "tooltips": true,
     "font": "ubuntu",
     "font-code": "ubuntu",
     "font-size": 15,
@@ -21,8 +22,8 @@
     },
     "codeFormatting": true,
     "codeFormattingEngine": ["UtilitJs", "PrismJS", "HilightJs", "rainbowJs", "microHighlightJs"],
-    "terms-and-conditions": {
-        "version": "v1.0.0",
+    "legal-info": {
+        "jsversion": "ES6",
         "package": "UtilityJS",
         "creator": "PixelThreader",
         "url": "https://utilityjs.com",

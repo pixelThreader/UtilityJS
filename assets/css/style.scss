@@ -1,7 +1,8 @@
 :root,
-[data-uppy-theme="light"] {
+[data-utjs-theme="light"] {
     --bg-base: #b6ecec;
     --bg-base-1: #3f3f3f;
+    --ripple-clr: #0000004d;
     --bg-header-footer: #757474;
     --base-clr-01: #b6ecec;
     --base-clr-02: #3f3f3f;
@@ -11,18 +12,15 @@
     --shadow01: rgba(0, 0, 0, 0.22);
     --light-sun: #0aa5a5;
     --profile-dropdown: #ffffff40;
-    --profile-usage: #056d05;
-    --profile-profile: #117ebe;
-    --profile-settings: #e2e1e1;
-    --profile-logout: #d73232;
-    --nav-link-hover: #2a666a47;
+    --utjs-drpdn: #363e3f;
     --navigation-bg: rgba(0, 0, 0, 0.286);
+    --nav-link-hover: #36393932;
     // z-indices
     --z-index-profile-dropdown: 10000000;
     --z-index-navigation: 1000000;
 }
 
-[data-uppy-theme="dark"] {
+[data-utjs-theme="dark"] {
     --bg-base: #3f3f3f;
     --bg-base-1: #b6ecec;
     --bg-header-footer: #8ca3a3;
@@ -32,11 +30,8 @@
     --shortcut-key-clr: white;
     --shadow01: rgba(0, 0, 0, 0.22);
     --profile-dropdown: rgba($color: #2a666a, $alpha: 0.5);
-    --profile-usage: #09cd09;
-    --profile-profile: #61c5ff;
-    --profile-settings: #c3c3c3;
-    --profile-logout: #fc7171;
-    --nav-link-hover: #bddb9847;
+    --utjs-drpdn: #95d0e7;
+    --nav-link-hover: #00eaff8b;
 }
 
 // importing custom fonts
@@ -45,34 +40,42 @@
     font-family: 'Delius';
     src: url('/assets/font/Delius-Regular.woff');
 }
+
 @font-face {
     font-family: 'Kalam';
     src: url('/assets/font/Kalam-Regular.woff');
 }
+
 @font-face {
     font-family: 'Mali';
     src: url('/assets/font/Mali-Regular.woff');
 }
+
 @font-face {
     font-family: 'Playwrite1';
     src: url('/assets/font/PlaywriteDEGrund-Regular.woff');
 }
+
 @font-face {
     font-family: 'Playwrite2';
     src: url('/assets/font/PlaywriteFRTrad-Regular.woff');
 }
+
 @font-face {
     font-family: 'Playwrite3';
     src: url('/assets/font/PlaywritePE-Regular.woff');
 }
+
 @font-face {
     font-family: 'Poppins';
     src: url('/assets/font/Poppins-Regular.woff');
 }
+
 @font-face {
     font-family: 'Roboto';
     src: url('/assets/font/Roboto-Regular.woff');
 }
+
 @font-face {
     font-family: 'Ubuntu';
     src: url('/assets/font/Ubuntu-Regular.woff');
@@ -126,12 +129,13 @@
 
 html {
     font-size: 63.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     position: relative;
     top: 0 !important;
-    min-height: 100vh;
+    height: 200vh;
     width: 100%;
     background: var(--bg-base);
     overflow-x: hidden;
@@ -159,10 +163,45 @@ body {
     background: var(--bg-base-1);
 }
 
-// hide the google translate
-.VIpgJd-ZVi9od-ORHb-OEVmcd {
-    display: none !important;
+// SCSS for ripple effect
+.utjs-rip {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: var(--ripple-clr);
+        transform: scale(0);
+        opacity: 1;
+        pointer-events: none;
+        animation: ripple-animation 0.5s linear;
+    }
+
+    @keyframes ripple-animation {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: scale(1); // Adjust scale factor as needed
+            opacity: 0;
+        }
+    }
 }
+
+
+// Main Container section
+#mainContianer {
+    height: calc(100% - 70px);
+    width: 100%;
+    position: relative;
 
 // header
 
@@ -449,7 +488,7 @@ header {
                         transition: .5s ease;
 
                         &.active {
-                            transform: translateY(-47px);
+                            transform: translateY(-50px);
                         }
 
                         svg.menu {
@@ -540,6 +579,7 @@ header {
                     display: flex;
                     text-decoration: none;
                     transition: 0.4s;
+                    border-bottom: 1px solid var(--utjs-drpdn);
 
                     &:hover {
                         transition: 0s;
@@ -550,44 +590,13 @@ header {
                         background: #ffffff54;
                     }
 
-                    &.use {
-                        border-bottom: 1px solid var(--profile-usage);
-                    }
-
-                    &.prfle {
-                        border-bottom: 1px solid var(--profile-profile);
-                    }
-
-                    &.sett {
-                        border-bottom: 1px solid var(--profile-settings);
-                    }
-
-                    &.lout {
-                        border-bottom: 1px solid var(--profile-logout);
-                    }
-
                     .icon-action {
                         height: 4rem;
                         width: 4rem;
                         display: grid;
                         place-items: center;
                         font-size: 2rem;
-
-                        &.use {
-                            color: var(--profile-usage);
-                        }
-
-                        &.prfle {
-                            color: var(--profile-profile);
-                        }
-
-                        &.sett {
-                            color: var(--profile-settings);
-                        }
-
-                        &.lout {
-                            color: var(--profile-logout);
-                        }
+                        color: var(--utjs-drpdn);
                     }
 
                     .action-name {
@@ -595,24 +604,9 @@ header {
                         height: 100%;
                         width: calc(100% - 4rem);
                         font-size: 1.6rem;
+                        color: var(--utjs-drpdn);
                         display: flex;
                         align-items: center;
-
-                        &.use {
-                            color: var(--profile-usage);
-                        }
-
-                        &.prfle {
-                            color: var(--profile-profile);
-                        }
-
-                        &.sett {
-                            color: var(--profile-settings);
-                        }
-
-                        &.lout {
-                            color: var(--profile-logout);
-                        }
                     }
                 }
             }
@@ -669,20 +663,21 @@ header {
                     gap: 1rem;
                     grid-template-columns: repeat(4, 1fr);
 
-                    li {
+                    li.nav-item {
                         height: 10rem;
                         background: var(--bg-base);
                         border: 1px solid var(--bg-base-1);
                         border-radius: .7rem;
                         display: flex;
-                        overflow: hidden;
 
                         a {
+                            position: relative;
                             height: 100%;
                             width: 100%;
                             display: flex;
                             justify-content: center;
                             align-items: center;
+                            overflow: hidden;
                             font-size: 2rem;
                             text-decoration: none;
                             color: var(--bg-base-1);
@@ -702,7 +697,6 @@ header {
                                 height: 700px;
                                 width: 700px;
                                 opacity: 0;
-                                transition: .5s, top 0s, left 0s;
                             }
 
                             &::after {
@@ -741,9 +735,29 @@ header {
 
 main {
     position: relative;
-    height: 200vh;
+    height: auto;
     z-index: 0;
     padding: 1rem;
     background: var(--bg-main);
     transition: .5s ease;
+}
+}
+
+//footer
+
+footer.footer_utjs {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-header-footer);
+
+    .lowerFooter {
+        font-size: 1.4rem;
+        color: var(--base-clr-02);
+
+        span a {
+            color: var(--base-clr-01);
+        }
+    }
 }

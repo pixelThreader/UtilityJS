@@ -182,8 +182,19 @@
         };
     });
 
+    // New utsReady function
+    function utsReady(callback) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', callback);
+        } else {
+            callback();
+        }
+    }
+
     utilitySelector.fn.init.prototype = utilitySelector.fn;
 
+    // Attach utsReady to the global object
+    global.utsReady = utsReady;
     global.uts = global.utilitySelector = utilitySelector;
 
 })(typeof window !== 'undefined' ? window : this);
